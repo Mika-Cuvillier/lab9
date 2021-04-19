@@ -1,0 +1,123 @@
+/*
+Les blocs de cours
+*/
+
+
+.cours-accueil{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    h2 {
+        width : 100%;
+        font-size: 3rem;
+        text-align: center;
+        padding : 0;
+        margin:10px auto 0 auto;
+    }
+}
+
+
+.bloc {
+    width: 100vw;
+    height: 30%;
+    display : flex;
+    flex-direction : row;
+    flex-wrap: wrap;
+    // border : 1px solid #999;
+    article {
+        position : relative;
+        display: flex;
+        flex-direction : column;
+        justify-content: space-between;
+        align-items: center;
+        width : 92%;
+        border : 1px solid #aaa;
+        margin : 4%;
+        /*
+     
+        */
+        p{
+            font-size: 1.3rem;
+            margin : .3rem;
+        }
+        a{
+            display : block;
+            text-align: center;
+            // font-size: 2.5rem;
+            font-size : clamp(1rem, #{"-0.875rem + 8.333vw"}, 3rem);
+            text-decoration: none;
+            font-weight: bold;
+            
+        }
+   /*
+      &::after{
+          position:absolute;
+          content: 'oui';
+          width : 100%;
+          height: 100%;
+          top:0;
+          left:0;
+          right: 0;
+          bottom: 0;
+          z-index: 99;
+          transition : clip-path .5s ease-in-out;
+          clip-path : circle(75% at 50% 50%);
+          background-color: #aaa;
+      } 
+
+      &:hover::after {
+        clip-path: circle(0%);
+      }
+    */  
+    }
+  
+}
+.Web article{
+        background-color: rgb(193, 196, 152);
+    }
+.Conception article{   
+        background-color:#cae2b7;}
+.Jeu article{   
+        background-color: rgb(152, 165, 196);}
+.Spécifique article {  
+        background-color: #d3d3d3;}
+.Image2d3d article{
+        background-color:#c4b6d3;
+    }    
+
+@include media-desktop(800px) {
+    .accueil{
+        flex-direction: row;
+    }
+    .bloc {
+
+        article {
+            width : 42%;
+            margin : 2%;
+            a{
+                font-size : clamp(1rem, #{"-0.875rem + 6.333vw"}, 2rem);
+            }
+        }
+    }
+
+}
+
+@include media-desktop(1200px) {
+    .accueil{
+        flex-direction: row;
+    }
+    .bloc {
+
+        article {
+            width : 29%;
+            margin : 2%;
+            a{
+                font-size : clamp(1rem, #{"-0.875rem + 4.333vw"}, 2.5rem);
+            }
+        }
+    }
+
+}
+
+

@@ -1,0 +1,138 @@
+$point_de_rupture_tablette : 1000px;
+$point_de_rupture_desktop : 1400px;
+
+.largeur_100 {
+    width : 100vw;
+}
+.largeur_50 {
+    width : 100vw; 
+    @include media-desktop{
+        width : 50vw; 
+    }
+}
+
+.largeur_33 {
+    width : 100vw;
+    @include media-desktop($point_de_rupture_tablette)
+        {
+        width : 50vw; 
+    }
+    @include media-desktop($point_de_rupture_desktop){
+        width : 33vw; 
+    }
+}
+
+.largeur_25 {
+    width : 100vw;
+    @include media-desktop(1000px)
+        {
+        width : 50vw; 
+    }
+    @include media-desktop(1400px){
+        width : 25vw; 
+    }
+}
+
+.largeur_20 {
+    width : 100vw;
+    @include media-desktop(500px)
+    {
+    width : 50vw; 
+    }
+    @include media-desktop(700px)
+    {
+    width : 25vw; 
+    }
+    @include media-desktop{
+        width : 20vw; 
+    }
+}
+
+.slider {
+    display : flex;
+    width : 600vw;
+    // height : 10vw;
+    flex-direction : row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    transition : transform 1s;
+    transform : translateX(0);
+    // border : 1px solid #f00;
+    margin:0;
+    padding : 0;
+    .slide__conteneur {
+        display : flex;
+        justify-content: center;
+        align-items: center;
+        border : 1px solid #aaa;
+       
+        .slide {
+            width : 90%;
+            display : flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            .img{
+                display : block;}
+            .slide__info{
+                width : 60%;
+               // border : 1px solid #aaa;
+                display : flex;
+                flex-direction : column;
+                justify-content: space-between;
+                align-items : center;
+
+                a {
+                    text-align: center;
+                }
+            }
+
+        }
+
+    }
+
+}
+/* ---------------------------------------------------------------
+Bouton de contrôle du carrousel
+----------------------------------------------------------------- */ 
+.ctrl-carrousel{
+    width : 100%;
+    display : flex;
+    justify-content: center;
+    margin : 2rem 0 2rem 0;
+&.largeur_33 input {
+    display : block;
+    width : 2rem; 
+        @include media-desktop($point_de_rupture_tablette)
+        {
+            &:nth-of-type(4){
+                display : none;
+            }
+            &:nth-of-type(5){
+                display : none;
+            }
+            &:nth-of-type(6){
+                display : none;
+            };
+        }    
+        @include media-desktop($point_de_rupture_desktop)
+        {
+            &:nth-of-type(3){
+                display : none;
+            }
+            &:nth-of-type(4){
+                display : none;
+            }
+            &:nth-of-type(5){
+                display : none;
+            }
+            &:nth-of-type(6){
+                display : none;
+            };
+        }
+    }
+}
+
+
+

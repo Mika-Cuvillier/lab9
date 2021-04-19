@@ -1,0 +1,123 @@
+.carrousel {
+    display : flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width : 600vw;
+    height : 41vh;
+    transition : transform .5s;
+    transform : translateX(250vw);
+    margin : 2rem 0 2rem 0;
+    background-color: transparent;
+    @include media-desktop{
+        & {
+            height : 41vh;
+        } 
+    }   
+    .slide__conteneur {
+        //flex: 1 0 100vw;
+        //height : 50vh;
+        border : 1px solid #aaa;
+        width : 100vw;
+        display : flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        $base-color: rgb(7, 48, 90);
+            @for $i from 1 through 7 {
+                &:nth-of-type(#{$i}) .slide {
+                    background-color: lighten($base-color, $i * 10%);
+                }
+            }
+        .slide {
+            display : flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width : 100%;
+            
+            padding : 0;
+            @include media-desktop{
+              & {
+                flex-direction: row; 
+                width : 60%;
+                padding :2% 3% 2% 3%;
+              }  
+            }
+
+            .post-thumbnail {
+                display :block;
+              
+                img {
+                    display : block;
+                    //width: 100%;
+                     border-radius : 50%;
+                    
+                }
+            }
+
+            .slide__info {
+                display : flex;
+                flex-direction : column;
+                justify-content: center;
+                align-items: center;
+                color : rgb(255, 255, 255);
+                font-size: 1rem;
+                font-weight : bold;
+                // couleur de base
+              
+
+                p {
+                    color : #fff;
+                    font-size : 1rem;
+                }
+                a {
+                    font-size : 1rem;
+                    color : #fff;
+                    text-align : center;
+                    text-decoration : none;
+                    @include media-desktop{
+                        & {
+                            font-size : 2rem;
+                        }  
+                      }
+
+                }
+                
+            }
+        }
+    }
+}
+
+.carrousel-ctrl{
+    display : flex;
+    justify-content: center;
+    align-items: center;
+   width: 100vw; 
+   /* background-color: blue; */
+
+    .carrousel__bout {
+        display:flex;
+        align-items: center;
+        justify-content: center;
+       
+        width : 1rem;
+        height : 1rem;
+        margin : .5rem;
+        
+       // background-color: aqua;
+        border-radius : 50%;
+        font-weight: bold;
+        padding :0;
+
+        background: radial-gradient(#99d1eb, #568796);
+        &:hover {
+            background: radial-gradient(#76adc7, #255c6d);
+         
+        }
+    }
+
+    .radcarrou {
+        width : 1rem;
+        height : 1rem;
+    }
+}

@@ -1,0 +1,22 @@
+.galerie {
+    display : flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    transform : perspective(800px);
+    article {
+        transform-origin: 50% 50%;
+        margin : 1%;
+        a {
+            display : block;
+            position:relative;
+            width :150px;
+            height:150px;
+        
+            img {
+                display : block;
+                width : 150px;
+            }
+        }
+    }
+    
+}
