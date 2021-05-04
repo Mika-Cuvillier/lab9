@@ -73,9 +73,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 # Layouts
 --------------------------------------------------------------*/
-// @import "layouts/content-sidebar"; // Uncomment this line for a sidebar on right side of your content.
+@import "layouts/content-sidebar"; // Uncomment this line for a sidebar on right side of your content.
 // @import "layouts/sidebar-content"; // Uncomment this line for a sidebar on left side of your content.
-@import "layouts/no-sidebar";
+// @import "layouts/no-sidebar";
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
@@ -123,3 +123,11 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 --------------------------------------------- */
 @import "local/slider";
 @import "local/galerie";
+
+@import "local/footer";
+/* Local/footer
+-----------------------------------------------*/
+
+@import "local/formulaire";
+/* Local/formulaire
+-----------------------------------------------*/

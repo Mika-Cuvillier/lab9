@@ -21,7 +21,7 @@
 </head>
 <?php if ( is_front_page() ) : ?>
 <?php endif; ?>
-<body <?php body_class(); ?>>
+<body <?php body_class(is_front_page() || is_category('Projet') ? 'no-sidebar' : ''); ?>>
 
 
 <?php wp_body_open(); ?>

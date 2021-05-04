@@ -34,7 +34,7 @@ get_header();
 					  	<?php if ($precedent != "XXXXXXX"): ?>
 							</section>
 						<?php endif;?>
-						<?php if (in_array($precedent, ["Web", "Jeu"])) : ?>	
+						<?php if (in_array($precedent, ['Web', 'Jeu', 'spécifique'])) : ?>	
 							<section class="ctrl-carrousel  largeur_33">
 								<?php echo $ctrl_radio;
 									$ctrl_radio = ""; 
@@ -42,22 +42,39 @@ get_header();
 							</section>
 						<?php endif;?>
 						<h2><?php echo $tPropriété['typeCours'] ?></h2>
-						<section id='un'  <?php echo (in_array($tPropriété['typeCours'], ["Web", "Jeu"]) ? 'class="slider"' : 'class="bloc"');  ?>>
+						<section <?php echo class_composant($tPropriété) ?>>
 					<?php endif;?>	
 					<?php 
-					if (in_array($tPropriété['typeCours'], ["Web", "Jeu"])) : 
+					if (in_array($tPropriété['typeCours'], ['Web', 'Jeu', 'spécifique'])) : 
 						get_template_part( 'template-parts/content', 'carrousel' );
 						$ctrl_radio .= '<input type="radio" name="rad-'. $tPropriété['typeCours'] .'">';
-					 else:
+					elseif($tPropriété['typeCours'] == 'Projet'):
+						get_template_part( 'template-parts/content', 'galerie' );
+					else:
 						get_template_part( 'template-parts/content', 'bloc' );
 					endif; 
 					$precedent = $tPropriété['typeCours'];
 				endwhile; ?>
 			</section>
+<!-- //////////////////////////////////////////////////////////////////////
+	Formulaire d'ajout d'un article de catégorie << Nouvelles >>  -->
+			<section class="admin-rapid">
+			<h3>Ajouter un article de catégorie Nouvelles</h3>
+			<input type="text" name="title" placeholder="Titre">
+			<textarea name="content" placeholder="Contenu"></textarea>
+			<button id="bout-rapid">Créer une Nouvelle</button>
+
+			</section>
+
+
+			<section class="nouvelles">
+				<!-- <button id="bout_nouvelles">Dernières Nouvelles</button> -->
+				<section></section>
+			</section>
 		<?php endif; ?>
 </main><!-- #main -->
 <?php
-get_sidebar();
+//get_sidebar();
 get_footer();
 
 function convertir_tableau(&$tPropriété){
@@ -67,6 +84,18 @@ function convertir_tableau(&$tPropriété){
 	$tPropriété['titre'] = substr($titre_grand,8, -6);
 	$tPropriété['sigle'] = substr($titre_grand,0, 7);
 	$tPropriété['typeCours'] = get_field('type_de_cours'); 
+}
+
+function class_composant($typeCours){
+	if(in_array($typeCours,['Web', 'Jeu', 'spécifique'])){
+		return 'class="carrousel"';
+	}
+	elseif($typeCours == 'Projet'){
+		return 'class="galerie"';
+	}
+	else{
+		return 'class="bloc"';
+	}
 }
 
 function genere_bouton_radio($type){
