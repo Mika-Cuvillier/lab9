@@ -8,7 +8,7 @@
 {
    let maRequete = new XMLHttpRequest();
    console.log(maRequete)
-   maRequete.open('GET', monObjJS.URLDomaine + '/wp-json/wp/v2/posts?categories=33');
+   maRequete.open('GET', monObjJS.URLDomaine + '/wp-json/wp/v2/posts?per_page=3');
    maRequete.onload = function () {
        console.log(maRequete)
        if (maRequete.status >= 200 && maRequete.status < 400) {
@@ -36,8 +36,8 @@
 bouton_ajout = document.getElementById('bout-rapid')
 bouton_ajout.addEventListener('mousedown', function(){
     let monArticle = {
-        "title" : document.querySelector('.admin-rapid [name="title"]').Value,
-        "content" : document.querySelector('.admin-rapid [name="content"]').Value,
+        "title" : document.querySelector('.admin-rapid [name="title"]').value,
+        "content" : document.querySelector('.admin-rapid [name="content"]').value,
         "status" : "publish",
         "categories" : [33] 
     }
@@ -50,8 +50,8 @@ bouton_ajout.addEventListener('mousedown', function(){
     creerArticle.onreadystatechange = function() {
         if(creerArticle.readyState == 4){
             if(creerArticle.status == 201){
-                document.querySelector('.admin-rapid [name="title"]').Value = ''
-                document.querySelector('.admin-rapid [name="content"]').Value = ''
+                document.querySelector('.admin-rapid [name="title"]').value = ''
+                document.querySelector('.admin-rapid [name="content"]').value = ''
             }
             else{
                 alert ('Erreur réessayer')

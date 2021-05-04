@@ -680,9 +680,17 @@ textarea {
 .site {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto 25%;
-      grid-template-columns: auto 25%;
-      grid-template-areas: "header header" "main sidebar" "footer footer";
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+      grid-template-areas: "header header" "main main" "sidebar sidebar" "footer footer";
+}
+
+@media (min-width: 800px) {
+  .site {
+    -ms-grid-columns: auto 25%;
+        grid-template-columns: auto 25%;
+        grid-template-areas: "header header" "main sidebar" "footer footer";
+  }
 }
 
 .site-header {
@@ -700,9 +708,11 @@ textarea {
 }
 
 .widget-area {
-  -ms-grid-row: 2;
-  -ms-grid-column: 2;
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
   grid-area: sidebar;
+  background-color: #eee;
 }
 
 .site-footer {
@@ -1378,6 +1388,35 @@ body.home::after {
   margin: 2% 4% 2% 3%;
 }
 
+.nouvelles h2 {
+  color: black;
+  padding-bottom: 30px;
+}
+
+.wp-block-image {
+  width: 300px;
+  height: 300px;
+}
+
+.page-header, .entry-header {
+  margin-top: 30px;
+}
+
+.page-header .page-title, .page-header .entry-title, .entry-header .page-title, .entry-header .entry-title {
+  font-size: 4rem;
+  color: crimson;
+  margin-bottom: 0;
+}
+
+.page-header .archive-description, .entry-header .archive-description {
+  font-size: 1rem;
+  color: gray;
+}
+
+.page-header .archive-description p, .entry-header .archive-description p {
+  margin: 0;
+}
+
 /* Local/burger
 --------------------------------------------- */
 /* --------------------------------------------------------------------------------------
@@ -1612,7 +1651,7 @@ Les blocs de cours
   width: 100%;
   font-size: 3rem;
   text-align: center;
-  padding: 0;
+  padding-bottom: 30px;
   margin: 10px auto 0 auto;
 }
 
@@ -2027,5 +2066,11 @@ Bouton de contrôle du carrousel
 /* Local/footer
 -----------------------------------------------*/
 /* Local/formulaire
+-----------------------------------------------*/
+#secondary {
+  padding-left: 4%;
+}
+
+/* Local/sidebar
 -----------------------------------------------*/
 /*# sourceMappingURL=style.css.map */
