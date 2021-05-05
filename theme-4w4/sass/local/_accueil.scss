@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     // width: 100vw;
-    background-color: #fff;
+    background-color: #E5E545;
     // overflow-x: hidden;
 }
 
@@ -26,7 +26,7 @@ body.home::after {
     z-index: -1;
     
     clip-path: polygon( 100% 90%, 100% 100%,  70% 100%);
-    background-color:#bee0ff;
+    background-color:#999900;
     @include media-desktop {
         clip-path: polygon(80% 0, 100% 0, 100% 100%, 50% 100%);
     
