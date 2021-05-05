@@ -2031,10 +2031,21 @@ Bouton de contrôle du carrousel
 }
 
 .galerie .flip-card-back {
-  background-color: #2980b9;
+  background-color: #999900;
   color: white;
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
+}
+
+.galerie h1 {
+  font-size: 1.3rem;
+  text-align: center;
+  padding-top: 30px;
+}
+
+.galerie h1 a:link {
+  color: black;
+  text-align: center;
 }
 
 .site-footer {

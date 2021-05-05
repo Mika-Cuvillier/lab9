@@ -40,9 +40,18 @@
       }
       
       .flip-card-back {
-        background-color: #2980b9;
+        background-color: #999900;
         color: white;
         transform: rotateY(180deg);
       }
     
+}
+.galerie h1{
+  font-size: 1.3rem;
+  text-align: center;
+  padding-top: 30px;
+  a:link{
+    color: black;
+    text-align: center;
+  }
 }
