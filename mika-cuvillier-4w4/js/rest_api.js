@@ -1,5 +1,5 @@
 (function(){
-    // let bouton = document.getElementById('bout_nouvelles')
+    let bouton = document.getElementById('bout_nouvelles')
     let nouvelles = document.querySelector('.nouvelle section')
     let annonce = document.getElementById('annonce')
 
@@ -11,11 +11,9 @@
     function monAjax(requete, elmDom)
 {
    let maRequete = new XMLHttpRequest();
-   console.log(maRequete)
    maRequete.open('GET', requete);
 
    maRequete.onload = function () {
-       console.log(maRequete)
        if (maRequete.status >= 200 && maRequete.status < 400) {
            let data = JSON.parse(maRequete.responseText);
            let chaineResultat = ''
@@ -61,7 +59,7 @@ bouton_ajout.addEventListener('mousedown', function(){
                 document.querySelector('.admin-rapid [name="content"]').value = ''
             }
             else{
-                alert ('Erreur réessayer')
+                alert ('Erreur réessayer - status = ' + creerArticle.status)
             }
         }
     }

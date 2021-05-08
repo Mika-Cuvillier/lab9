@@ -1676,6 +1676,7 @@ Les blocs de cours
   text-align: center;
   padding-bottom: 30px;
   margin: 10px auto 0 auto;
+  color: crimson;
 }
 
 .bloc {
@@ -1708,8 +1709,11 @@ Les blocs de cours
       -ms-flex-align: center;
           align-items: center;
   width: 92%;
-  border: 1px solid #aaa;
+  border: 2px solid black;
+  border-radius: 15%;
   margin: 4%;
+  color: black;
+  background-color: #87cefa;
   /*
      
         */
@@ -1740,12 +1744,31 @@ Les blocs de cours
   margin: .3rem;
 }
 
-.bloc article a {
+.bloc article a, .bloc article a:-webkit-any-link, .bloc article a:visited, .bloc article a:hover {
   display: block;
   text-align: center;
   font-size: clamp(1rem, -0.875rem + 8.333vw, 3rem);
   text-decoration: none;
   font-weight: bold;
+  color: black;
+}
+
+.bloc article a, .bloc article a:-moz-any-link, .bloc article a:visited, .bloc article a:hover {
+  display: block;
+  text-align: center;
+  font-size: clamp(1rem, -0.875rem + 8.333vw, 3rem);
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+}
+
+.bloc article a, .bloc article a:any-link, .bloc article a:visited, .bloc article a:hover {
+  display: block;
+  text-align: center;
+  font-size: clamp(1rem, -0.875rem + 8.333vw, 3rem);
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
 }
 
 .Web article {
@@ -2081,6 +2104,7 @@ Bouton de contrôle du carrousel
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin: 0;
 }
 
 .site-footer .ligne-footer {

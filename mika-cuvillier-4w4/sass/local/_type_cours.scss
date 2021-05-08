@@ -14,6 +14,7 @@ Les blocs de cours
         text-align: center;
         padding-bottom : 30px;
         margin:10px auto 0 auto;
+        color: crimson;
     }
 }
 
@@ -32,8 +33,11 @@ Les blocs de cours
         justify-content: space-between;
         align-items: center;
         width : 92%;
-        border : 1px solid #aaa;
+        border : 2px solid black;
+        border-radius: 15%;
         margin : 4%;
+        color: black;
+        background-color: #87cefa;
         /*
      
         */
@@ -41,13 +45,14 @@ Les blocs de cours
             font-size: 1.3rem;
             margin : .3rem;
         }
-        a{
+        a, a:any-link, a:visited, a:hover{
             display : block;
             text-align: center;
             // font-size: 2.5rem;
             font-size : clamp(1rem, #{"-0.875rem + 8.333vw"}, 3rem);
             text-decoration: none;
             font-weight: bold;
+            color: black;
             
         }
    /*
