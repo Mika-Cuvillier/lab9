@@ -1429,6 +1429,17 @@ body.home::after {
   margin-top: 20px;
 }
 
+.entry-content {
+  color: black;
+  font-size: 1rem;
+}
+
+@media (min-width: 800px) {
+  .entry-content {
+    font-size: 1.2rem;
+  }
+}
+
 /* Local/burger
 --------------------------------------------- */
 /* --------------------------------------------------------------------------------------
