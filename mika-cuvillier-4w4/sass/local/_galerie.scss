@@ -10,6 +10,7 @@
         height: 150px;
         perspective: 1000px;
         margin: 0.5%;
+        border: 7px solid black;
       }
       
       .flip-card-inner {
@@ -54,4 +55,7 @@
     color: black;
     text-align: center;
   }
+}
+.archive-description p{
+  color: black;
 }

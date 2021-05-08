@@ -712,7 +712,8 @@ textarea {
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: sidebar;
-  background-color: #eee;
+  background-color: #87cefa;
+  border: 1px solid black;
 }
 
 .site-footer {
@@ -2041,6 +2042,7 @@ Bouton de contrôle du carrousel
   -webkit-perspective: 1000px;
           perspective: 1000px;
   margin: 0.5%;
+  border: 7px solid black;
 }
 
 .galerie .flip-card-inner {
@@ -2092,6 +2094,10 @@ Bouton de contrôle du carrousel
 .galerie h1 a:link {
   color: black;
   text-align: center;
+}
+
+.archive-description p {
+  color: black;
 }
 
 .site-footer {
