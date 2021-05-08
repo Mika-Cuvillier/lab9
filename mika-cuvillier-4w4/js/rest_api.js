@@ -1,24 +1,31 @@
 (function(){
     // let bouton = document.getElementById('bout_nouvelles')
-    let nouvelles = document.querySelector('.nouvelles section')
+    let nouvelles = document.querySelector('.nouvelle section')
+    let annonce = document.getElementById('annonce')
 
     // bouton.addEventListener('mousedown', monAjax)
-    window.addEventListener('load', monAjax)
-    function monAjax()
+    window.addEventListener('load', function(){
+        monAjax(monObjJS.URLDomaine + '/wp-json/wp/v2/posts?per_page=8', nouvelles)
+        monAjax(monObjJS.URLDomaine + '/wp-json/wp/v2/posts?categories=34', annonce)
+    })
+    function monAjax(requete, elmDom)
 {
    let maRequete = new XMLHttpRequest();
    console.log(maRequete)
-   maRequete.open('GET', monObjJS.URLDomaine + '/wp-json/wp/v2/posts?per_page=8');
+   maRequete.open('GET', requete);
+
    maRequete.onload = function () {
        console.log(maRequete)
        if (maRequete.status >= 200 && maRequete.status < 400) {
            let data = JSON.parse(maRequete.responseText);
-           let chaine = ''
+           let chaineResultat = ''
            for (const elm of data){
-                chaine += '<h2>' + elm.title.rendered + '</h2>'
-                chaine += elm.content.rendered
+            chaineResultat += '<h2>' + elm.title.rendered + '</h2>'
+            chaineResultat += elm.content.rendered
            }
-           nouvelles.innerHTML = chaine;
+           elmDom.innerHTML = chaineResultat;
+           elmDom.innerHTML = chaineResultat;
+           
         }
        else {
            console.log('La connexion est faite mais il y a une erreur')
@@ -39,7 +46,7 @@ bouton_ajout.addEventListener('mousedown', function(){
         "title" : document.querySelector('.admin-rapid [name="title"]').value,
         "content" : document.querySelector('.admin-rapid [name="content"]').value,
         "status" : "publish",
-        "categories" : [33] 
+        "categories" : [34] 
     }
 
     let creerArticle = new XMLHttpRequest()

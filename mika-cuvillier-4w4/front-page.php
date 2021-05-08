@@ -17,6 +17,7 @@ get_header();
 <main id="primary" class="site-main">
 	<?php if ( have_posts() ) : ?>
 		<header class="page-header">
+		<section id="annonce"></section>
 		<?php
 			echo '<h2>Les cours du TIM</h2>' ;
 			echo '<h3>' . category_description(get_cat_ID('cours')) . '</h3>' ;
