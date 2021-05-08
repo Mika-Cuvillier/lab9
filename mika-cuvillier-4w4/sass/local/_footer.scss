@@ -8,6 +8,7 @@
         display: flex;
         justify-content: space-around;
         flex-wrap: wrap;
+        padding-left: 50px;
         @include media-desktop{ 
         flex-direction: row;
         }

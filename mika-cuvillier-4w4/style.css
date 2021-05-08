@@ -1403,9 +1403,15 @@ body.home::after {
 }
 
 .page-header .page-title, .page-header .entry-title, .entry-header .page-title, .entry-header .entry-title {
-  font-size: 4rem;
+  font-size: 1.8rem;
   color: crimson;
   margin-bottom: 0;
+}
+
+@media (min-width: 800px) {
+  .page-header .page-title, .page-header .entry-title, .entry-header .page-title, .entry-header .entry-title {
+    font-size: 4rem;
+  }
 }
 
 .page-header .archive-description, .entry-header .archive-description {
@@ -2067,6 +2073,10 @@ Bouton de contrôle du carrousel
 }
 
 .site-footer .ligne-footer {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2074,10 +2084,16 @@ Bouton de contrôle du carrousel
       justify-content: space-around;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  padding-left: 50px;
+}
+
+@media (min-width: 800px) {
+  .site-footer .ligne-footer {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
 }
 
 /* Local/footer

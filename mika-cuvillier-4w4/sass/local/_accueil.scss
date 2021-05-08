@@ -118,9 +118,12 @@ body.home::after {
     margin-top: 30px;
     
     .page-title, .entry-title{
-        font-size: 4rem;
+        font-size: 1.8rem;
         color: crimson;
         margin-bottom: 0;
+        @include media-desktop{
+            font-size: 4rem;
+        }
     }
     .archive-description{
         font-size: 1rem;

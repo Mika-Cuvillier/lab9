@@ -5,7 +5,7 @@
 
     // bouton.addEventListener('mousedown', monAjax)
     window.addEventListener('load', function(){
-        monAjax(monObjJS.URLDomaine + '/wp-json/wp/v2/posts?per_page=8', nouvelles)
+        monAjax(monObjJS.URLDomaine + '/wp-json/wp/v2/posts?categories=33', nouvelles)
         monAjax(monObjJS.URLDomaine + '/wp-json/wp/v2/posts?categories=34', annonce)
     })
     function monAjax(requete, elmDom)
